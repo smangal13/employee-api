@@ -35,39 +35,39 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     pip install pydantic
 
 # 3. API Endpoints
-  # 1. Add Employee
+  ## 1. Add Employee
     Endpoint: POST /employeeData
     Adds a new employee to the in-memory database.
-  # 2. Get All Employees
+  ## 2. Get All Employees
     Endpoint: GET /employeeData
     Returns a list of all employees stored in memory.
-  # 3. Get Employee by ID
+  ## 3. Get Employee by ID
     Endpoint: GET /employeeData/{employee_id}
     Retrieves a specific employee's information based on their id.
     Path Parameter: employee_id
-  # 4. Update Employee
+  ## 4. Update Employee
     Endpoint: PUT /employeeData/{employee_id}
     Updates all details of an employee except their id.
     Path Parameter: employee_id
-  # 5. Update Specific Employee
+  ## 5. Update Specific Employee
     Endpoint: PATCH /employeeData/{employee_id}
     Updates only the specific fields of an employee. The id cannot be updated.
     Path Parameter: employee_id
-  # 6. Delete Employee
+  ## 6. Delete Employee
     Endpoint: DELETE /employeeData/{employee_id}
     Deletes an employee's data from the in-memory list.
     Path Parameter: employee_id
 
 # 4. Testing and Running the API
-  # Step 1: Run the FastAPI Server
+  ## Step 1: Run the FastAPI Server
   To run the FastAPI server, use Uvicorn:
     uvicorn main:app --reload
   This starts the server on http://127.0.0.1:8000.
   The environment needs to be active and you need to be in the directory where the code is stored in your system. 
-  # Step 2: Test Endpoints with cURL (Integration Testing)
+  ## Step 2: Test Endpoints with cURL (Integration Testing)
   To test using cURL open a new terminal and run the following codes to test each API endpoint.
   
-  # Add Employee:
+  ### Add Employee:
     Code:
     curl -X POST http://127.0.0.1:8000/employeeData \
       -H "Content-Type: application/json" \
@@ -85,7 +85,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
       }
     }
     
-  # Get All Employees:
+  ### Get All Employees:
     Code:
     curl -X GET http://127.0.0.1:8000/employeeData \
       -H "Content-Type: application/json"
@@ -101,7 +101,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
       }
     ]
     
-  # Get Employee by ID:
+  ### Get Employee by ID:
     Code:
     curl -X GET http://127.0.0.1:8000/employeeData/1 \
       -H "Content-Type: application/json"
@@ -121,7 +121,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
       "detail": "Employee with the given employee_id not found"
     }
     
-  # Update Employee:
+  ### Update Employee:
     Code:
     curl -X PUT http://127.0.0.1:8000/employeeData/1 \
       -H "Content-Type: application/json" \
@@ -145,7 +145,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
       "detail": "Employee with the given employee_id not found"
     }
     
-  # Update Specific Employee Details:
+  ### Update Specific Employee Details:
     Code:
     curl -X PATCH http://127.0.0.1:8000/employeeData/1 \
       -H "Content-Type: application/json" \
@@ -169,7 +169,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
       "detail": "Employee with the given employee_id not found"
     }
     
-  # Delete Employee:
+  ### Delete Employee:
     Code:
     curl -X DELETE http://127.0.0.1:8000/employeeData/1 \
       -H "Content-Type: application/json"
@@ -179,7 +179,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
       "message": "Employee data Successfully Deleted"
     }
     
-  # Step 3: Test Using SwaggerUI (Optional)
+  ## Step 3: Test Using SwaggerUI (Optional)
   Perform the same test as Step 2, by using SwaggerUI instead of cURL.
     Access Swagger UI: Open a browser and go to http://127.0.0.1:8000/docs.
     Interact with the API: Use the "Try it out" button for each endpoint, provide the required data, and click "Execute" to test each endpoint.
