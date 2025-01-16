@@ -277,10 +277,6 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
     pytest test_main.py
 
-  To run a specific test within the file:
-
-    pytest -k "test_function_name" test_main.py
-
   ### Output Display: (Optional)
   To display verbose output:
 

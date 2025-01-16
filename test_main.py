@@ -109,6 +109,9 @@ def test_delete_employee():
     # Verify that the employee list is empty
     assert len(employees) == 0
 
+
+
+
 # Test error handling for employee not found (GET by ID)
 def test_get_employee_not_found():
     response = client.get("/employeeData/999")  # Employee with ID 999 does not exist
@@ -201,3 +204,81 @@ def test_delete_employee_not_exist():
 
     # Verify that the employee list has 1 employee
     assert len(employees) == 1
+
+
+
+
+# Test Default Values for POST: Input employee with all default values
+def test_add_employee_all_default():
+    employee_data = {
+        "id": 0,
+        "name": "string",
+        "department": "string",
+        "position": "string",
+        "salary": 0
+    }
+    
+    # Try adding the employee with default values
+    response = client.post("/employeeData", json=employee_data)
+    
+    assert response.status_code == 400
+    assert response.json() == {"detail": "Employee data cannot have default values"}
+
+    # Ensure only one entry in the list of employees 
+    assert len(employees) == 1
+    assert employees[0].id != 0
+
+# Test Default Values for POST: Input employee with some default values
+def test_add_employee_partial_default():
+    employee_data = {
+        "id": 1,
+        "name": "Sam",
+        "department": "string",
+        "position": "string",
+        "salary": 0
+    }
+    
+    # Try adding the employee with default values
+    response = client.post("/employeeData", json=employee_data)
+    
+    assert response.status_code == 400
+    assert response.json() == {"detail": "Employee data cannot have default values"}
+
+    # Ensure only one entry in the list of employees 
+    assert len(employees) == 1
+    assert employees[0].id != 0
+
+# Test Default Values for PUT: Input employee with some default values
+def test_update_employee_default():
+    updated_employee = {
+        "id": 1,
+        "name": "string",
+        "department": "string",
+        "position": "Senior Software Engineer",
+        "salary": 80000.0
+    }
+
+    response = client.put("/employeeData/1", json=updated_employee)
+
+    assert response.status_code == 400
+    assert response.json() == {"detail": "Employee data cannot have default values"}
+
+    # Ensure only one entry in the list of employees (from previous test)
+    assert len(employees) == 1
+    assert employees[0].id == 1
+    assert employees[0].name == "John Doe"
+    assert employees[0].salary == 70000.0
+
+# Test default values for PATCH: Input employee with some default values
+def test_update_specific_default():
+    updated_fields = {
+        "salary": 0
+    }
+
+    response = client.patch("/employeeData/1", json=updated_fields)
+
+    assert response.status_code == 400
+    assert response.json() == {"detail": "Employee data cannot have default values"}
+
+    # Verify the salary update did not occur
+    assert employees[0].salary == 70000.0
