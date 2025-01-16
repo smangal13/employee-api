@@ -14,10 +14,13 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
 # 2. Installation Instructions
   ## Step 1: Install Python 3 (if not already installed)
-  ...Check if Python 3 is already installed by running the following command in the terminal:
+
+     Check if Python 3 is already installed by running the following command in the terminal:
+     
     ```bash
     python3 --version```
-  ...If Python 3 is not installed, download and install it from the official website: python.org.
+
+     If Python 3 is not installed, download and install it from the official website: python.org.
   ## Step 2: Install Git (if not already installed)
   Verify if Git is installed:
     git --version
