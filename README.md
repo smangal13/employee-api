@@ -268,14 +268,14 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
     pytest -v
 
-  ![Depicting the Execution of the above command](assests/Pasted Graphic 11.png)
+  ![Depicting the Execution of the above command](<assests/Pasted Graphic 11.png>)
 
   To generate coverage report:
 
     pip install pytest-cov
     pytest --cov=. test_main.py
 
-  ![Depicting the Execution of the above command](assests/Pasted Graphic 12.png)
+  ![Depicting the Execution of the above command](<assests/Pasted Graphic 12.png>)
 
   To generate HTML test report:
 
