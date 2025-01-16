@@ -1,6 +1,15 @@
 # employee-api
 A backend Server using FastAPI in Python. Creating an Employee Data store, with in-memory storage. Creating API endpoints for CRUD operations.
 
+# Project Structure:
+  project-directory/
+  |
+  ├── main.py            # API implementation.
+  ├── test_main.py       # Unit tests for API endpoints.
+  ├── report.html        # Generated test report.
+  ├── assets/            # (Optional) Additional assets.
+  ├── __pycache__/       # Cache files.
+  └── README.md          # Project documentation (this file)
 
 # Documentation:
 This Employee Management API provides an easy-to-use platform for managing employee data. It allows users to create, read, update, and delete (CRUD operations) employee information. The data is stored in-memory, meaning that it is not persisted beyond the runtime of the API server. 
