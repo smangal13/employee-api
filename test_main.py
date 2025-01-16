@@ -4,7 +4,7 @@ from main import app, employees, Employee, UpdateEmployee
 from fastapi import HTTPException
 
 
-# Create a test client instance
+# Create a test client instance using the app object (FastAPI object)
 client = TestClient(app)
 
 # Test POST: Add an employee
@@ -135,3 +135,69 @@ def test_add_employee_with_existing_id():
     assert response.status_code == 400
     assert response.json() == {"detail": "Employee with the given employee_id already exists"}
 
+    # Ensure only one entry in the list of employees 
+    assert len(employees) == 1
+
+# Test error handling for PUT: Updating a non-existing employee's data
+def test_update_employee_not_exist():
+    updated_employee = {
+        "id": 2,
+        "name": "John Smith",
+        "department": "Engineering",
+        "position": "Senior Software Engineer",
+        "salary": 80000.0
+    }
+
+    response = client.put("/employeeData/2", json=updated_employee)
+
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Employee with the given employee_id not found"}
+
+    # Ensure only one entry in the list of employees (from previous test)
+    assert len(employees) == 1
+    assert employees[0].salary == 70000.0
+    assert employees[0].id == 1
+
+# Test error handling for PUT: Updating a employee's employee_id
+def test_update_employee_id():
+    updated_employee = {
+        "id": 2,
+        "name": "John Smith",
+        "department": "Engineering",
+        "position": "Senior Software Engineer",
+        "salary": 80000.0
+    }
+
+    response = client.put("/employeeData/1", json=updated_employee)
+
+    assert response.status_code == 400
+    assert response.json() == {"detail": "Employee_id cannot be changed"}
+
+    # Ensure only one entry in the list of employees (from previous test)
+    assert len(employees) == 1
+    assert employees[0].id == 1
+    assert employees[0].salary == 70000.0
+
+# Test error handling for PATCH: Updating specific fields of an non-existing employee
+def test_update_specific_employee_not_exist():
+    updated_fields = {
+        "salary": 95000.0
+    }
+
+    response = client.patch("/employeeData/2", json=updated_fields)
+
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Employee with the given employee_id not found"}
+
+    # Verify the salary update did not occur
+    assert employees[0].salary == 70000.0
+
+# Test error handling for DELETE: Delete an non-existing employee by ID
+def test_delete_employee_not_exist():
+    response = client.delete("/employeeData/2")
+
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Employee with the given employee_id not found"}
+
+    # Verify that the employee list has 1 employee
+    assert len(employees) == 1

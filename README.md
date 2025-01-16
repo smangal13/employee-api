@@ -205,8 +205,16 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     
   Expected Output:
 
+  If the employee exists:
+
     {
       "message": "Employee data Successfully Deleted"
+    }
+
+  If the employee does not exist:
+
+    {
+      "detail": "Employee with the given employee_id not found"
     }
     
   ## Step 3: Test Using SwaggerUI (Optional)
