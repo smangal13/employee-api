@@ -34,12 +34,12 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
   ## Step 4: Set Up Virtual Environment
   To create a Python 3 virtual environment, follow these steps:
-    1. In the same project directory as above.
-    2. Run the following command to create a new virtual environment:
+  1. In the same project directory as above.
+  2. Run the following command to create a new virtual environment:
 
-      python3 -m venv venv
-    
-    3. Once the virtual environment is created, activate it:
+    python3 -m venv venv
+
+  3. Once the virtual environment is created, activate it:
 
     source venv/bin/activate
 
