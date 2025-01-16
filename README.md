@@ -7,17 +7,17 @@ This Employee Management API provides an easy-to-use platform for managing emplo
 The API is built using FastAPI—a modern web framework for building APIs with Python. FastAPI is designed for performance and ease of use. 
 
 # 1. System Requirements
-  Python 3.7 or higher
-  pip package manager
-  Git for version control
-  VSCode or any other text editor for writing and editing code
+  1. Python 3.7 or higher
+  2. pip package manager
+  3. Git for version control
+  4. VSCode or any other text editor for writing and editing code
 
 # 2. Installation Instructions
   ## Step 1: Install Python 3 (if not already installed)
-  Check if Python 3 is already installed by running the following command in the terminal:
+  ...Check if Python 3 is already installed by running the following command in the terminal:
     ```bash
-    python3 --version
-  If Python 3 is not installed, download and install it from the official website: python.org.
+    python3 --version```
+  ...If Python 3 is not installed, download and install it from the official website: python.org.
   ## Step 2: Install Git (if not already installed)
   Verify if Git is installed:
     git --version
