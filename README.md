@@ -247,7 +247,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
   2. Interact with the API: Use the "Try it out" button for each endpoint, provide the required data, and click "Execute" to test each endpoint.
   3. Review the responses: Swagger UI will show the output directly in the interface, including successful and error responses.
 
-  ![Sample image of Swagger UI interface for the above API](image.png)
+  ![Sample image of Swagger UI interface for the above API](assests/image.png)
 
   ## Step 4: Unit Testing Using Pytest
   ### Download the necessary dependencies:
@@ -268,14 +268,14 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
     pytest -v
 
-  ![Depicting the Execution of the above command](<Pasted Graphic 11.png>)
+  ![Depicting the Execution of the above command](assests/Pasted Graphic 11.png)
 
   To generate coverage report:
 
     pip install pytest-cov
     pytest --cov=. test_main.py
 
-  ![Depicting the Execution of the above command](<Pasted Graphic 12.png>)
+  ![Depicting the Execution of the above command](assests/Pasted Graphic 12.png)
 
   To generate HTML test report:
 
@@ -283,7 +283,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     pytest test_main.py --html=report.html --self-contained-html
     open report.html
 
-  ![Depicting the Test Report](report.html.png)
+  ![Depicting the Test Report](assests/report.html.png)
 
   ## Step 5: Optional API Documentation using ReDoc
   Redoc is an open-source tool that generates customizable, interactive API documentation from OpenAPI specifications. It provides a clean, user-friendly interface for exploring and understanding APIs with detailed descriptions and response models.
