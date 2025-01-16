@@ -14,27 +14,32 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
 # 2. Installation Instructions
   ## Step 1: Install Python 3 (if not already installed)
-
-     Check if Python 3 is already installed by running the following command in the terminal:
+  Check if Python 3 is already installed by running the following command in the terminal:
      
-    ```bash
-    python3 --version```
+    python3 --version
 
-     If Python 3 is not installed, download and install it from the official website: python.org.
+  If Python 3 is not installed, download and install it from the official website: python.org.
   ## Step 2: Install Git (if not already installed)
   Verify if Git is installed:
+
     git --version
+
   If Git is not installed, download and install it from git-scm.com.
   ## Step 3: Set Up Virtual Environment
   To create a Python 3 virtual environment, follow these steps:
-    Open the terminal.
-    Navigate to the project directory (where you want to store your project).
-    Run the following command to create a new virtual environment:
+    1. Open the terminal.
+    2. Navigate to the project directory (where you want to store your project).
+    3. Run the following command to create a new virtual environment:
+
       python3 -m venv venv
+
   ## Step 4: Install Required Packages
-  Once the virtual environment is created, activate it:
+  1. Once the virtual environment is created, activate it:
+
     source venv/bin/activate  
-  Install the necessary packages (fastapi,pydantic and uvicorn):
+
+  2. Install the necessary packages (fastapi,pydantic and uvicorn):
+  
     pip install fastapi uvicorn
     pip install pydantic
 
