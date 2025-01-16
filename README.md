@@ -268,14 +268,14 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
     pytest -v
 
-    ![Depicting the Execution of the above command](<Pasted Graphic 11.png>)
+  ![Depicting the Execution of the above command](<Pasted Graphic 11.png>)
 
   To generate coverage report:
 
     pip install pytest-cov
     pytest --cov=. test_main.py
 
-    ![Depicting the Execution of the above command](<Pasted Graphic 12.png>)
+  ![Depicting the Execution of the above command](<Pasted Graphic 12.png>)
 
   To generate HTML test report:
 
@@ -283,7 +283,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     pytest test_main.py --html=report.html --self-contained-html
     open report.html
 
-    ![Depicting the Test Report](report.html.png)
+  ![Depicting the Test Report](report.html.png)
 
   ## Step 5: Optional API Documentation using ReDoc
   Redoc is an open-source tool that generates customizable, interactive API documentation from OpenAPI specifications. It provides a clean, user-friendly interface for exploring and understanding APIs with detailed descriptions and response models.
@@ -291,7 +291,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
   To access this documentation use the link: [ReDoc](http://127.0.0.1:8000/redoc)
 
   ![ReDoc UI](image-1.png)
-  
+
 # Contributors
   -***Shreya Mangal***
   ---
