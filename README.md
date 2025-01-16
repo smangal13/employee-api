@@ -18,13 +18,13 @@ The API is built using FastAPI—a modern web framework for building APIs with P
      
     python3 --version
 
-  If Python 3 is not installed, download and install it from the official website: python.org.
+  If Python 3 is not installed, download and install it from the official website: [python.org](https://www.python.org/).
   ## Step 2: Install Git (if not already installed)
   Verify if Git is installed:
 
     git --version
 
-  If Git is not installed, download and install it from git-scm.com.
+  If Git is not installed, download and install it from [git-scm.com](https://git-scm.com/).
   ## Step 3: Set Up Virtual Environment
   To create a Python 3 virtual environment, follow these steps:
     1. Open the terminal.
@@ -39,39 +39,42 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     source venv/bin/activate  
 
   2. Install the necessary packages (fastapi,pydantic and uvicorn):
-  
+
     pip install fastapi uvicorn
     pip install pydantic
 
 # 3. API Endpoints
   ## 1. Add Employee
-    Endpoint: POST /employeeData
-    Adds a new employee to the in-memory database.
+  - Endpoint: POST /employeeData
+  - Adds a new employee to the in-memory database.
   ## 2. Get All Employees
-    Endpoint: GET /employeeData
-    Returns a list of all employees stored in memory.
+  - Endpoint: GET /employeeData
+  - Returns a list of all employees stored in memory.
   ## 3. Get Employee by ID
-    Endpoint: GET /employeeData/{employee_id}
-    Retrieves a specific employee's information based on their id.
-    Path Parameter: employee_id
+  - Endpoint: GET /employeeData/{employee_id}
+  - Retrieves a specific employee's information based on their id.
+  - Path Parameter: employee_id
   ## 4. Update Employee
-    Endpoint: PUT /employeeData/{employee_id}
-    Updates all details of an employee except their id.
-    Path Parameter: employee_id
+  - Endpoint: PUT /employeeData/{employee_id}
+  - Updates all details of an employee except their id.
+  - Path Parameter: employee_id
   ## 5. Update Specific Employee
-    Endpoint: PATCH /employeeData/{employee_id}
-    Updates only the specific fields of an employee. The id cannot be updated.
-    Path Parameter: employee_id
+  - Endpoint: PATCH /employeeData/{employee_id}
+  - Updates only the specific fields of an employee. The id cannot be updated.
+  - Path Parameter: employee_id
   ## 6. Delete Employee
-    Endpoint: DELETE /employeeData/{employee_id}
-    Deletes an employee's data from the in-memory list.
-    Path Parameter: employee_id
+  - Endpoint: DELETE /employeeData/{employee_id}
+  - Deletes an employee's data from the in-memory list.
+  - Path Parameter: employee_id
 
 # 4. Testing and Running the API
   ## Step 1: Run the FastAPI Server
   To run the FastAPI server, use Uvicorn:
+
     uvicorn main:app --reload
+
   This starts the server on http://127.0.0.1:8000.
+  
   The environment needs to be active and you need to be in the directory where the code is stored in your system. 
   ## Step 2: Test Endpoints with cURL (Manual Testing)
   To test using cURL open a new terminal and run the following codes to test each API endpoint.
