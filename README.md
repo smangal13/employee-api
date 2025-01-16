@@ -8,6 +8,7 @@ A backend Server using FastAPI in Python. Creating an Employee Data store, with 
   ├── test_main.py       # Unit tests for API endpoints.
   ├── report.html        # Generated test report.
   ├── assets/            # (Optional) Additional assets.
+  ├── .gitignore         # Git ignore file.
   ├── __pycache__/       # Cache files.
   └── README.md          # Project documentation (this file)
 
