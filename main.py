@@ -79,9 +79,3 @@ def delete_employee_data(employee_id: int):
             del employees[index]
             return {"message": "Employee data Successfully Deleted"}
     raise HTTPException(status_code=404, detail="Employee with the given employee_id not found")
-
-
-''' Questions
-Should Employee id be changed?
-Should we check for default values as input?
-'''

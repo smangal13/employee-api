@@ -64,7 +64,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     uvicorn main:app --reload
   This starts the server on http://127.0.0.1:8000.
   The environment needs to be active and you need to be in the directory where the code is stored in your system. 
-  ## Step 2: Test Endpoints with cURL (Integration Testing)
+  ## Step 2: Test Endpoints with cURL (Manual Testing)
   To test using cURL open a new terminal and run the following codes to test each API endpoint.
   
   ### Add Employee:
@@ -184,3 +184,27 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     Access Swagger UI: Open a browser and go to http://127.0.0.1:8000/docs.
     Interact with the API: Use the "Try it out" button for each endpoint, provide the required data, and click "Execute" to test each endpoint.
     Review the responses: Swagger UI will show the output directly in the interface, including successful and error responses.
+
+  ## Step 4: Unit Testing Using Pytest
+    1. Download the necessary dependencies:
+      pip install pytest pytest-asyncio
+    
+    2. Running Tests:
+      To run a specific test file, use:
+        pytest test_main.py
+      To run a specific test within the file:
+        pytest -k "test_function_name" test_main.py
+
+    3. Output Display: (Optional)
+        To display verbose output:
+          pytest -v
+        To generate coverage report:
+          pip install pytest-cov
+          pytest --cov=. test_main.py
+        To generate HTML test report:
+          pip install pytest-html
+          pytest test_main.py --html=report.html --self-contained-html
+          open report.html
+
+
+
