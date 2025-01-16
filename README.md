@@ -74,18 +74,20 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     uvicorn main:app --reload
 
   This starts the server on http://127.0.0.1:8000.
-  
+
   The environment needs to be active and you need to be in the directory where the code is stored in your system. 
   ## Step 2: Test Endpoints with cURL (Manual Testing)
   To test using cURL open a new terminal and run the following codes to test each API endpoint.
   
   ### Add Employee:
-    Code:
+  Code:
+
     curl -X POST http://127.0.0.1:8000/employeeData \
       -H "Content-Type: application/json" \
       -d '{"id": 1, "name": "John Doe", "department": "Engineering", "position": "Software Engineer", "salary": 75000}'
     
-    Expected Output:
+  Expected Output:
+
     {
       "message": "Employee Data Successfully stored!",
       "employee": {
@@ -98,11 +100,13 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     }
     
   ### Get All Employees:
-    Code:
+  Code:
+
     curl -X GET http://127.0.0.1:8000/employeeData \
       -H "Content-Type: application/json"
     
-    Expected Output: A JSON array of Employees
+  Expected Output: A JSON array of Employees
+
     [
       {
         "id": 1,
@@ -114,12 +118,15 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     ]
     
   ### Get Employee by ID:
-    Code:
+  Code:
+
     curl -X GET http://127.0.0.1:8000/employeeData/1 \
       -H "Content-Type: application/json"
     
-    Expected Output:
-    If the employee exists:
+  Expected Output:
+
+  If the employee exists:
+
     {
       "id": 1,
       "name": "John Doe",
@@ -128,19 +135,23 @@ The API is built using FastAPI—a modern web framework for building APIs with P
       "salary": 75000
     }
     
-    If the employee does not exist:
+  If the employee does not exist:
+
     {
       "detail": "Employee with the given employee_id not found"
     }
     
   ### Update Employee:
-    Code:
+  Code:
+
     curl -X PUT http://127.0.0.1:8000/employeeData/1 \
       -H "Content-Type: application/json" \
       -d '{"id": 1, "name": "John Doe", "department": "Engineering", "position": "Senior Software Engineer", "salary": 80000}'
       
-    Expected Output:
-    If the employee exists:
+  Expected Output:
+  
+  If the employee exists:
+
     {
       "message": "Employee data Successfully Updated",
       "employee": {
@@ -152,19 +163,23 @@ The API is built using FastAPI—a modern web framework for building APIs with P
       }
     }
     
-    If the employee does not exist:
+  If the employee does not exist:
+
     {
       "detail": "Employee with the given employee_id not found"
     }
     
   ### Update Specific Employee Details:
-    Code:
+  Code:
+
     curl -X PATCH http://127.0.0.1:8000/employeeData/1 \
       -H "Content-Type: application/json" \
       -d '{"salary": 85000}'
       
-    Expected Output:
-    If the employee exists:
+  Expected Output:
+  
+  If the employee exists:
+
     {
       "message": "Employee data Successfully Updated",
       "employee": {
@@ -176,44 +191,56 @@ The API is built using FastAPI—a modern web framework for building APIs with P
       }
     }
     
-    If the employee does not exist:
+  If the employee does not exist:
+
     {
       "detail": "Employee with the given employee_id not found"
     }
     
   ### Delete Employee:
-    Code:
+  Code:
+
     curl -X DELETE http://127.0.0.1:8000/employeeData/1 \
       -H "Content-Type: application/json"
     
-    Expected Output:
+  Expected Output:
+
     {
       "message": "Employee data Successfully Deleted"
     }
     
   ## Step 3: Test Using SwaggerUI (Optional)
   Perform the same test as Step 2, by using SwaggerUI instead of cURL.
-    Access Swagger UI: Open a browser and go to http://127.0.0.1:8000/docs.
-    Interact with the API: Use the "Try it out" button for each endpoint, provide the required data, and click "Execute" to test each endpoint.
-    Review the responses: Swagger UI will show the output directly in the interface, including successful and error responses.
+    1. Access Swagger UI: Open a browser and go to http://127.0.0.1:8000/docs.
+    2. Interact with the API: Use the "Try it out" button for each endpoint, provide the required data, and click "Execute" to test each endpoint.
+    3. Review the responses: Swagger UI will show the output directly in the interface, including successful and error responses.
 
   ## Step 4: Unit Testing Using Pytest
     1. Download the necessary dependencies:
+
       pip install pytest pytest-asyncio
     
     2. Running Tests:
       To run a specific test file, use:
+
         pytest test_main.py
+
       To run a specific test within the file:
+
         pytest -k "test_function_name" test_main.py
 
     3. Output Display: (Optional)
         To display verbose output:
+
           pytest -v
+
         To generate coverage report:
+
           pip install pytest-cov
           pytest --cov=. test_main.py
+
         To generate HTML test report:
+        
           pip install pytest-html
           pytest test_main.py --html=report.html --self-contained-html
           open report.html
