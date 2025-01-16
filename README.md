@@ -1,4 +1,4 @@
-# employeeData-api
+# employee-api
 A backend Server using FastAPI in Python. Creating an Employee Data store, with in-memory storage. Creating API endpoints for CRUD operations.
 
 
@@ -8,8 +8,11 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
 # 1. System Requirements
   Python 3.7 or higher
+  
   pip package manager
+  
   Git for version control
+  
   VSCode or any other text editor for writing and editing code
 
 # 2. Installation Instructions
