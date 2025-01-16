@@ -216,13 +216,38 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     {
       "detail": "Employee with the given employee_id not found"
     }
+  
+  ### Update Employee (Changing the employee_id):
+  Code:
+
+    curl -X PUT http://127.0.0.1:8000/employeeData/1 \
+      -H "Content-Type: application/json" \
+      -d '{"id": 2, "name": "John Doe", "department": "Engineering", "position": "Senior Software Engineer", "salary": 80000}'
+      
+  Expected Output:
+  
+  If the employee exists:
+
+    {
+      "detail": "Employee_id cannot be changed"
+    }
+    
+  If the employee does not exist:
+
+    {
+      "detail": "Employee with the given employee_id not found"
+    }
     
   ## Step 3: Test Using SwaggerUI (Optional)
+  Swagger UI is an interactive web-based interface that allows developers to visualize and interact with an API's endpoints. It auto-generates API documentation from OpenAPI specifications, enabling users to test API requests directly from the browser.
+
   Perform the same test as Step 2, by using SwaggerUI instead of cURL.
   
   1. Access Swagger UI: Open a browser and go to http://127.0.0.1:8000/docs.
   2. Interact with the API: Use the "Try it out" button for each endpoint, provide the required data, and click "Execute" to test each endpoint.
   3. Review the responses: Swagger UI will show the output directly in the interface, including successful and error responses.
+
+  ![Sample image of Swagger UI interface for the above API](image.png)
 
   ## Step 4: Unit Testing Using Pytest
   ### Download the necessary dependencies:
@@ -243,10 +268,14 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
     pytest -v
 
+    ![Depicting the Execution of the above command](<Pasted Graphic 11.png>)
+
   To generate coverage report:
 
     pip install pytest-cov
     pytest --cov=. test_main.py
+
+    ![Depicting the Execution of the above command](<Pasted Graphic 12.png>)
 
   To generate HTML test report:
 
@@ -254,6 +283,15 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     pytest test_main.py --html=report.html --self-contained-html
     open report.html
 
+    ![Depicting the Test Report](report.html.png)
+
+  ## Step 5: Optional API Documentation using ReDoc
+  Redoc is an open-source tool that generates customizable, interactive API documentation from OpenAPI specifications. It provides a clean, user-friendly interface for exploring and understanding APIs with detailed descriptions and response models.
+
+  To access this documentation use the link: [ReDoc](http://127.0.0.1:8000/redoc)
+
+  ![ReDoc UI](image-1.png)
+  
 # Contributors
   -***Shreya Mangal***
   ---
