@@ -20,25 +20,31 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
   If Python 3 is not installed, download and install it from the official website: [python.org](https://www.python.org/).
   ## Step 2: Install Git (if not already installed)
-  Verify if Git is installed:
+  Verify if Git is installed by running the following command in the terminal:
 
     git --version
 
   If Git is not installed, download and install it from [git-scm.com](https://git-scm.com/).
-  ## Step 3: Set Up Virtual Environment
+  ## Step 3: Clone the Repository
+  To clone the repository, follow the these steps:
+    1. In the terminal navigate to the project directory (where you want to store your project).
+    2. Execute the following command:
+
+      git clone https://github.com/smangal13/employee-api.git
+
+  ## Step 4: Set Up Virtual Environment
   To create a Python 3 virtual environment, follow these steps:
-    1. Open the terminal.
-    2. Navigate to the project directory (where you want to store your project).
-    3. Run the following command to create a new virtual environment:
+    1. In the same project directory as above.
+    2. Run the following command to create a new virtual environment:
 
       python3 -m venv venv
+    
+    3. Once the virtual environment is created, activate it:
 
-  ## Step 4: Install Required Packages
-  1. Once the virtual environment is created, activate it:
+    source venv/bin/activate
 
-    source venv/bin/activate  
-
-  2. Install the necessary packages (fastapi,pydantic and uvicorn):
+  ## Step 5: Install Required Packages
+  1. Install the necessary packages (fastapi,pydantic and uvicorn):
 
     pip install fastapi uvicorn
     pip install pydantic
