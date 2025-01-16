@@ -27,10 +27,10 @@ The API is built using FastAPI—a modern web framework for building APIs with P
   If Git is not installed, download and install it from [git-scm.com](https://git-scm.com/).
   ## Step 3: Clone the Repository
   To clone the repository, follow the these steps:
-    1. In the terminal navigate to the project directory (where you want to store your project).
-    2. Execute the following command:
+  1. In the terminal navigate to the project directory (where you want to store your project).
+  2. Execute the following command:
 
-      git clone https://github.com/smangal13/employee-api.git
+    git clone https://github.com/smangal13/employee-api.git
 
   ## Step 4: Set Up Virtual Environment
   To create a Python 3 virtual environment, follow these steps:
