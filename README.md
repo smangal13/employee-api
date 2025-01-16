@@ -8,16 +8,14 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
 # 1. System Requirements
   Python 3.7 or higher
-  
   pip package manager
-  
   Git for version control
-  
   VSCode or any other text editor for writing and editing code
 
 # 2. Installation Instructions
   ## Step 1: Install Python 3 (if not already installed)
   Check if Python 3 is already installed by running the following command in the terminal:
+    ```bash
     python3 --version
   If Python 3 is not installed, download and install it from the official website: python.org.
   ## Step 2: Install Git (if not already installed)
