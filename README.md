@@ -290,7 +290,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
   To access this documentation use the link: [ReDoc](http://127.0.0.1:8000/redoc)
 
-  ![ReDoc UI](image-1.png)
+  ![ReDoc UI](assests/image-1.png)
 
 # Contributors
   -***Shreya Mangal***
