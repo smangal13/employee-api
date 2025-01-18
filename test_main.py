@@ -7,6 +7,8 @@ from fastapi import HTTPException
 # Create a test client instance using the app object (FastAPI object)
 client = TestClient(app)
 
+
+# Tests to check Basic Functionality
 # Test POST: Add an employee
 def test_add_employee():
     employee_data = {
@@ -17,9 +19,10 @@ def test_add_employee():
         "salary": 70000.0
     }
 
+    initial_num_enteries = len(employees)
+
     response = client.post("/employeeData", json=employee_data)
     
-    # Assert response status code and structure
     assert response.status_code == 200
     assert response.json() == {
         "message": "Employee Data Successfully stored!",
@@ -27,22 +30,24 @@ def test_add_employee():
     }
 
     # Verify that employee is added to in-memory list
-    assert len(employees) == 1
-    assert employees[0].id == 1
+    curr_num_enteries = len(employees)
+    assert curr_num_enteries - initial_num_enteries == 1
+    assert employees[curr_num_enteries - 1].id == 1
 
 # Test GET: Retrieve all employees
 def test_get_all_employees():
     response = client.get("/employeeData")
 
-    # Assert response status code and structure
+    # Verifying that the employees were retrieved
     assert response.status_code == 200
     assert isinstance(response.json(), list)
-    assert len(response.json()) == 1  # Assuming there is 1 employee from the previous test
+    assert len(response.json()) == len(employees)
 
 # Test GET: Retrieve employee by ID
 def test_get_employee_by_id():
     response = client.get("/employeeData/1")
 
+    # Verifying that the correct employee was retrieved
     assert response.status_code == 200
     assert response.json() == {
         "id": 1,
@@ -70,7 +75,7 @@ def test_update_employee():
         "employee": updated_employee
     }
 
-    # Verify that the employee data was actually updated
+    # Verifying that the employee data was actually updated
     assert employees[0].position == "Senior Software Engineer"
     assert employees[0].salary == 90000.0
 
@@ -94,7 +99,7 @@ def test_update_specific_employee():
         }
     }
 
-    # Verify the salary update
+    # Verifying the salary update
     assert employees[0].salary == 95000.0
 
 # Test DELETE: Delete an employee by ID
@@ -106,12 +111,12 @@ def test_delete_employee():
         "message": "Employee data Successfully Deleted"
     }
 
-    # Verify that the employee list is empty
+    # Verifying that the employee list is empty
     assert len(employees) == 0
 
 
 
-
+# Tests to Check Error Handling Functionality
 # Test error handling for employee not found (GET by ID)
 def test_get_employee_not_found():
     response = client.get("/employeeData/999")  # Employee with ID 999 does not exist
@@ -207,7 +212,7 @@ def test_delete_employee_not_exist():
 
 
 
-
+# Tests to ensure that Default Values are not being stored
 # Test Default Values for POST: Input employee with all default values
 def test_add_employee_all_default():
     employee_data = {

@@ -56,10 +56,9 @@ The API is built using FastAPI—a modern web framework for building APIs with P
     source venv/bin/activate
 
   ## Step 5: Install Required Packages
-  1. Install the necessary packages (fastapi,pydantic and uvicorn):
+  1. Install the necessary packages (fastapi,pydantic,uvicorn and pytest) using the requirements.txt file:
 
-    pip install fastapi uvicorn
-    pip install pydantic
+    pip install -r requirements.txt
 
 # 3. API Endpoints
   ## 1. Add Employee
@@ -267,11 +266,7 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
   ![Sample image of Swagger UI interface for the above API](assests/image.png)
 
-  ## Step 4: Unit Testing Using Pytest
-  ### Download the necessary dependencies:
-    
-    pip install pytest pytest-asyncio
-    
+  ## Step 4: Unit Testing Using Pytest 
   ### Running Tests:
   To run a specific test file, use:
 
@@ -286,14 +281,12 @@ The API is built using FastAPI—a modern web framework for building APIs with P
 
   To generate coverage report:
 
-    pip install pytest-cov
     pytest --cov=. test_main.py
 
   ![Depicting the Execution of the above command](<assests/Pasted Graphic 12.png>)
 
   To generate HTML test report:
 
-    pip install pytest-html
     pytest test_main.py --html=report.html --self-contained-html
     open report.html
 
