@@ -12,7 +12,7 @@ A backend Server using FastAPI in Python. Creating an Employee Data store, with 
   ├── .gitignore         # Git ignore file.
   ├── requirements.txt   # Includes all necessary dependencies
   ├── __pycache__/       # Cache files.
-  └── README.md          # Project documentation (this file)
+  └── README.md          # Project documentation
   ```
 
 # Documentation:
